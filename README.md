@@ -1,6 +1,6 @@
-# Vector Search Application
+Upda# Vector Search API
 
-A Python-based vector search application using Qdrant vector database for semantic search capabilities.
+Vector search API using Qdrant
 
 ## Overview
 
