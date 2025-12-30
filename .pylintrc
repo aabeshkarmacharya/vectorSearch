@@ -1,0 +1,35 @@
+[MASTER]
+# Skip generated/vendor dirs
+ignore = .venv
+
+[MESSAGES CONTROL]
+# Pragmatic defaults for Django projects
+disable =
+    C0114,  # missing-module-docstring
+    C0115,  # missing-class-docstring
+    C0116,  # missing-function-docstring
+    R0903,  # too-few-public-methods (common for Django models/forms)
+    R0902,  # too-many-instance-attributes
+    R0913,  # too-many-arguments (views/forms often pass many)
+    R0801,  # duplicate-code (noisy esp. in tests)
+
+[FORMAT]
+# Match Black configuration
+max-line-length = 100
+
+[BASIC]
+good-names = i, j, k, ex, pk, qs, id, _
+
+[DESIGN]
+max-parents = 11
+max-attributes = 12
+max-args = 10
+
+[SIMILARITIES]
+ignore-comments = yes
+ignore-docstrings = yes
+min-similarity-lines = 6
+
+[TYPECHECK]
+# Rely on pylint-django for model attrs; keep type checking lenient here
+ignored-classes = django.db.models.Manager, django.db.models.query.QuerySet

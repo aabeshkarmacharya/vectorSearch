@@ -11,11 +11,12 @@ collections = [c.name for c in client.get_collections().collections]
 if COLLECTION not in collections:
     client.create_collection(
         collection_name=COLLECTION,
-        vectors_config=VectorParams(
-            size=VECTOR_SIZE,
-            distance=Distance.COSINE
-        )
+        vectors_config=VectorParams(size=VECTOR_SIZE, distance=Distance.COSINE),
     )
     print(f"Created collection: {COLLECTION}")
 else:
     print(f"Collection already exists: {COLLECTION}")
+
+client.collection_exists(
+    collection_name=COLLECTION,
+)

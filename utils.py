@@ -16,7 +16,7 @@ def token_len(text: str) -> int:
 
 def chunk_text(text: str) -> list[str]:
     chunks = []
-    current = []
+    current: list[str] = []
     current_len = 0
 
     paragraphs = [p.strip() for p in text.split("\n\n") if p.strip()]
